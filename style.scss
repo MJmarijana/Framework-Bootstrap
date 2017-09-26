@@ -1,0 +1,234 @@
+@import "variables";
+@import "mixin";
+
+//grid
+.body {
+    margin: 0 auto;
+    font-family: $font-family;
+    height: 100%;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    clear: both;
+    @include border-box;
+    @media (min-width: 768px) {
+    width: 750px;
+    }
+    @media (min-width: 992px) {
+    width: 970px;
+    }
+    @media (min-width: 1200px) {
+    width: 1170px; 
+    }
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    @include border-box;
+    
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    @include border-box;
+}
+
+@include createCol("xs", 0px);
+@include createCol("sm", 768px);
+@include createCol("md", 992px);
+@include createCol("lg", 1200px);
+
+
+.button {
+    
+    float:left;
+    margin-top: 5%;
+    clear: both;
+}
+
+.btn-primary {
+    
+    @include btn($primary, $colorw);
+     &:active {
+      box-shadow: 0 0 0 2px rgba(2,117,216,.5);
+    }
+  
+}
+
+.btn-secondary {
+    
+    @include btn ($secondary, $colorb);
+    &:active {
+      box-shadow: 0 0 0 2px rgba(204,204,204,.5);
+    }  
+}
+
+.btn-success {
+    
+    @include btn ($success, $colorw);
+    &:active {
+      box-shadow: 0 0 0 2px rgba(92,184,92,.5);
+    }
+}
+
+.btn-info {
+    
+    @include btn ($info, $colorw);
+    &:active {
+      box-shadow: 0 0 0 2px rgba(91,192,222,.5);;
+    }
+}
+
+.btn-warning {
+    
+    @include btn ($warning, $colorw);
+    &:active {
+      box-shadow: 0 0 0 2px rgba(240,173,78,.5);
+    }
+}
+
+.btn-danger {
+    
+    @include btn ($danger, $colorw);
+    &:active {
+      box-shadow: 0 0 0 2px rgba(217,83,79,.5);;
+    }
+}
+
+.btn-link {
+    
+    @include btn ($link, $colorbl);
+    &:active {
+      box-shadow: 0 0 0 2px rgba(2,117,216,.25);
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+}
+
+.images {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    float: left;
+    clear: both;
+}
+
+.img-responsive{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.img-rounded {
+    @include shapeImg($shape-r);
+}
+
+.img-circle {
+    @include shapeImg($shape-c);
+}
+
+.img-thumbnail {
+    @include shapeImg($shape-t);
+    display: inline-block;
+    max-width: 100%;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.img-blur {
+    @include shapeImg($shape-r);
+    filter: blur(5px);
+    
+}
+
+.text-colors {
+    float: left;
+    clear: both;
+}
+
+.text-muted {
+    
+    @include colorText($muted);
+}
+
+.text-primary {
+    
+    @include colorText($primary);
+}
+
+.text-success {
+    
+    @include colorText($success);
+}
+
+.text-info {
+    
+    @include colorText($info);
+}
+
+.text-warning {
+    
+    @include colorText($warning);
+}
+
+.text-error {
+    
+    @include colorText($danger);
+}
+
+//bg-colors
+
+.bg-colors {
+    
+    float: left;
+    clear: both;
+    margin-top: 5%;
+}
+
+.bg-muted {
+    @include bgColors($muted);
+}
+.bg-primary {
+    @include bgColors($primary);
+}
+.bg-success {
+    @include bgColors($success);
+}
+.bg-info {
+    @include bgColors($info);
+}
+.bg-warning {
+    @include bgColors($warning);
+}
+.bg-error {
+    @include bgColors($danger);
+}
+
+.alerts{
+    
+    float: left;
+    clear: both;
+    margin-top: 5%;
+}
+
+.alert-success {
+    @include alerts($bg-alg,$b-coloralg,$text-alg);
+}
+.alert-info {
+    @include alerts($bg-alb,$b-coloralb,$text-alb);
+}
+.alert-warning {
+    @include alerts($bg-alo,$b-coloralo,$text-alo);
+}
+.alert-danger {
+    @include alerts($bg-alr,$b-coloralr,$text-alr);
+}
